@@ -56,11 +56,19 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{{ route('rooms.list') }}">Rooms</a></li>
                         @if( Auth::check() && Auth::user()->type == App\User::ADMIN )
-                            <li><a href="{{ route('admin.manage') }}">Admin Dashboard</a></li>
+                            <li><a href="{{ route('admin.manage') }}">Manage Reservation</a></li>
                         @endif
+                        @if( Auth::check() && Auth::user()->type == App\User::ADMIN )
+                            <li><a href="{{ route('admin.manage') }}">Manage Room</a></li>
+                        @endif
+
                         @if( Auth::check() && Auth::user()->type == App\User::USER )
                             <li><a href="{{ route('user.manage') }}">My Reservations</a></li>
                         @endif
+                        <li><a href="Story.php">About</a></li>
+                        <li><a href="RoomsReservation.php">Services</a></li>
+                        <li><a href="Categories.php">Hosted events</a></li>
+                        <li><a href="Contact.php">Contact Us</a></li>
 
                     </ul>
 
@@ -88,12 +96,53 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+
                                 </ul>
                             </li>
                         @endif
                     </ul>
                 </div>
             </div>
+        </nav>
+  <nav class="navbar navbar-default navbar-fixed-bottom">
+  <!--  <footer >
+<div style="position: fixed;" >
+
+</div>
+    <ul>
+      <li>About</li>
+      <li><a  href=Story.php >Story</a></li>
+      <li><a  href=WhyYouNeedUs.php>Why you need us</a></li>
+      <li><a href=WhyWeNeedYou.php>Why we need you</a></li>
+    </ul>
+
+    <ul>
+      <li>Services</li>
+      <li><a  href=CoursesDevelopment.php>Courses development</a></li>
+      <li><a  href=EducationalSolutions.php>Educational solutions</a></li>
+      <li><a href=RoomsReservation.php>Rooms reservation</a></li>
+    </ul>
+
+    <ul>
+      <li>Hosted events</li>
+      <li><a  href=Calender.php>Calender</a></li>
+      <li><a  href=Categories.php>Categories</a></li>
+      <li><a href=UpcomingEvents.php>Upcoming events</a></li>
+    </ul>
+
+    <ul>
+      <li>Contact Us</li>
+      <li><a href=Map.php >Map </a></li>
+      <li><a href=Contact.php >Contact</a></li>
+    </ul>
+</div>
+<div class="bottom">
+  <h5>Have a question? Email us at <a href="mailto:example@example.com">af.gh@hotmail.com</a></h5>
+  <h6>Copyright 2017, All Rights Reserved </h6>
+</div >
+
+  </div>
+</footer>-->
         </nav>
 
         <div class="container" style="padding-top: 60px;">
