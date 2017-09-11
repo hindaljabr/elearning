@@ -28,6 +28,21 @@
 	 </div>
 	</div>
 
+	<div>
+		@if( Auth::check() && Auth::user()->type == App\User::ADMIN )
+		 <div class="col-lg-6">
+			<a href="{{ route('addRoom_form.form')}}" class="btn btn-default ">Add a new room</a>
+		</div>
+		<div class="col-lg-6">
+			<a href="{{ route('admin.manageRoom')}}" class="btn btn-primary ">
+				Manage Room
+			</a>
+	</div>
+		@endif
+
+
+	</div>
+
 	<div class="row">
 	    <div class="col-md-12">
 	       @if( $allrooms->count() )
@@ -62,7 +77,8 @@
 	       					</div>
 	       				@endforeach
 	       			</div>
-	       		@endforeach
+			@endforeach
+
 
 	       		<div class="text-center">{{ $allrooms->links() }}</div>
 	       @else

@@ -11,23 +11,33 @@
 @section('content')
 
 
-    <img class="img-circle" src="C:\xampp\htdocs\reservations\resources\views\Photo\Room1.jpg" alt="Room1" width="300" height="200" frameborder="0" style="border:0" allowfullscreen>
-    <div >
-
-
-<h1>Hello</h1>
 <h3>Details for {{$room->name}}</h3>
 
           <div>
-              {{$room->Image}}
-              {{$room->Capacity}}
-              {{$room->description}}
+        <h5> <img src="{{ $room -> Image }}"> </h5>
+        <h5> Room Capacity: {{$room-> Capacity}}</h5> <br>
+        <h5> Room description:{{$room-> description}}</h5><br>
           </div>
-
-
     <div>
-      <button style = "border-style: solid; background-color: white; left: -5em;"type="button" onclick="alert('Loading')">Reserve!
-
+			<div class="col-lg-6">
+				<a href="{{ route('reservation.form', ['room_id' => $room->id]) }}" class="btn btn-primary btn-block">
+					Reserve
+				</a>
     </div>
+		
 
 @endsection
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<img  src="C:\xampp\htdocs\reservations\resources\views\Photo\Room1.jpg" alt="Room1" width="300" height="200" >
+
+
+	</body>
+</html>
