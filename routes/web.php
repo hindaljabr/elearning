@@ -40,3 +40,9 @@ Route::get('/admin/{reservation_id}/reject-reservation', 'AdminController@getRej
 
 // show the user page for managing the reservations
 Route::get('/user/manage', 'UserController@getManageReservation')->name('user.manage');
+// display the add room form
+Route::get('/addRoom_form', 'RoomController@getaddRoomForm')->name('addRoom_form.form');
+// save the submited add room form
+Route::post('/addRoom_form', 'RoomController@postaddRoomForm');
+
+Route::get('manageRoom','RoomController@getManageRoom')->name('admin.manageRoom');
